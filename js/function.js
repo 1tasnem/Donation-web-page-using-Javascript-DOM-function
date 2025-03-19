@@ -33,9 +33,9 @@ else {
  const formattedDate = now.toLocaleString()
  
  const div = document.createElement('div');
- div.classList.add('bg-red-200')
+ div.classList.add('bg-blue-200')
  div.innerHTML = `
- <h4 class ="text-2xl font-bold">Donate for Flood at Feni, Bangladesh</h4>
+ <h4 class ="text-2xl font-bold">Donate for Flood at Noakhali, Bangladesh<</h4>
  <p>${donation} is donated  </p>
  
    <p>${now} and ${formattedDate}</p>
@@ -131,9 +131,9 @@ document.getElementById('donate-btn3').addEventListener('click',function(event)
  const formattedDate = now.toLocaleString()
  
  const div = document.createElement('div');
- div.classList.add('bg-red-200')
+ div.classList.add('bg-gray-200')
  div.innerHTML = `
- <h4 class ="text-2xl font-bold">Donate for Flood at Feni, Bangladesh</h4>
+ <h4 class ="text-2xl font-bold ">Aid for Injured in the Quota Movement</h4>
  <p>${donation} is donated  </p>
  
    <p>${now} and ${formattedDate}</p>
@@ -149,46 +149,36 @@ document.getElementById('donate-btn3').addEventListener('click',function(event)
     const historyBtn = document.getElementById('history-button');
     
 
-    historyBtn.addEventListener('click',function (){
-        historyBtn.classList.add(
-            "bg-lime-400",
-            "font-bold",
-        );
-        donationBtn.classList.remove
-        (
-                "bg-lime-400",
-                "font-bold",
+    historyBtn.addEventListener('click', function () {
+      const historySection = document.getElementById("history-about");
+      const donationSection = document.getElementById("donation-section");
+  
+      if (historySection.classList.contains("hidden")) {
+          // Show history, hide donation
+          historySection.classList.remove("hidden");
+          donationSection.classList.add("hidden");
+  
+          // Update button styles
+          historyBtn.classList.add("bg-lime-400", "font-bold");
+          donationBtn.classList.remove("bg-lime-400", "font-bold");
+      }
+      } );
 
-        );
-        document.getElementById("history-about").style.display = "block";
-
-        document.getElementById("donation-section").classList.add("hidden");
-    document.getElementById("history-about").classList.remove("hidden");
-        
-    });
-
-    
-    
-    donationBtn.addEventListener('click',function (){
-        const donationBtn = document.getElementById('donation-button');
-        const historyBtn = document.getElementById('history-button');
-    donationBtn.classList.add(
-            "bg-lime-400",
-            "font-bold",
-        );
-        historyBtn.classList.remove
-        (
-                "bg-lime-400",
-                "font-bold",
-
-        );
-         document.getElementById("history-about").classList.add("hidden")
-
-        document.getElementById("donation-section").classList.remove("hidden");
-       
-    });
-
-
+      donationBtn.addEventListener('click',function(){
+        const historySection = document.getElementById("history-about");
+      const donationSection = document.getElementById("donation-section");
+      if (donationSection.classList.contains("hidden")) {
+          // Hide history and show donation section again
+          historySection.classList.add("hidden");
+          donationSection.classList.remove("hidden");
+  
+          // Reset button styles
+          historyBtn.classList.remove("bg-lime-400", "font-bold");
+          donationBtn.classList.add("bg-lime-400", "font-bold");
+      }
+      
+  });
+  
 
 
    
